@@ -17,7 +17,7 @@ currentDate = datetime.now().date()
 endDate = datetime(0000, 00, 00).date() # Date to stop the thread. Format: (yyyy,mm,dd)
 ```
 
-## Skype Group ID (get-skype Group-id.py)
+## Skype Group ID (get-skype-group-id.py)
 To get your Skype group ID, use the below Python code.
 You may also download from the repository.
 ```
