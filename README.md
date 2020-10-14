@@ -1,7 +1,7 @@
 # Auto send attendence to Skype Group
 This is an console program which is written in Python 3. It can help you to send check-in and check-out message to specific Skype group.
 
-## Configuration
+## Configuration (send-groupmsg-skype.py)
 You may only change the value in the configuration section.
 
 ##### # Configuration
@@ -17,7 +17,7 @@ currentDate = datetime.now().date()
 endDate = datetime(0000, 00, 00).date() # Date to stop the thread. Format: (yyyy,mm,dd)
 ```
 
-## Skype Group ID
+## Skype Group ID (get-skype Group-id.py)
 To get your Skype group ID, use the below Python code.
 You may also download from the repository.
 ```
