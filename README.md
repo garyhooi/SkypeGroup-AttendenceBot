@@ -1,4 +1,4 @@
-# AutoSendGroupMsgToSkype
+# Auto send attendence to Skype Group
 This is an console program which is written in Python 3. It can help you to send check-in and check-out message to specific Skype group.
 
 ## Configuration
