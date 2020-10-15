@@ -13,7 +13,6 @@ checkInTime = ""                        # Time that send check-in message (E.g. 
 checkOutTime = ""                       # Time that send check-out message (E.g. 24:59)
 msgCheckIn = "Check-in"
 msgCheckOut = "Check-out"
-currentDate = datetime.now().date()
 endDate = datetime(0000, 00, 00).date() # Date to stop the thread. Format: (yyyy,mm,dd)
 
 
@@ -37,7 +36,7 @@ schedule.every().day.at(checkOutTime).do(post_checkout, msgCheckOut, channel_id)
 
 while True:
     print(str(datetime.now().replace(microsecond=0)) + ": Checking your scheduled time...")
-
+    currentDate = datetime.now().date()
     if currentDate == endDate or currentDate > endDate:
         print(str(datetime.now().replace(microsecond=0)) + ": Thread expired, exiting...")
         thread.exit()
