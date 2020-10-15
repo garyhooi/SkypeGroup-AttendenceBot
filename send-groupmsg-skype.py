@@ -33,19 +33,19 @@ def post_checkout(msg, channel_id):
 
 # Processing
 while True:
-print(str(datetime.now().replace(microsecond=0)) + ": Waiting for scheduled time...")
+    print(str(datetime.now().replace(microsecond=0)) + ": Checking your scheduled time...")
 
-if currentDate == endDate or currentDate > endDate:
-    print(str(datetime.now().replace(microsecond=0)) + ": Thread expired, exiting...")
-    thread.exit()
-else:
-    if(int(currentDate.today().weekday()) == 5 or int(currentDate.today().weekday()) == 6):
-        print(str(datetime.now().replace(microsecond=0)) + ": Program skipped... Today is weekend.")
-        print(str(datetime.now().replace(microsecond=0)) + ": Waiting for next call...")
+    if currentDate == endDate or currentDate > endDate:
+        print(str(datetime.now().replace(microsecond=0)) + ": Thread expired, exiting...")
+        thread.exit()
     else:
-        schedule.every().day.at(checkInTime).do(post_checkin, msgCheckIn, channel_id)
-        schedule.every().day.at(checkOutTime).do(post_checkout, msgCheckOut, channel_id)
+        if(int(currentDate.today().weekday()) == 5 or int(currentDate.today().weekday()) == 6):
+            print(str(datetime.now().replace(microsecond=0)) + ": Program skipped... Today is weekend.")
+            print(str(datetime.now().replace(microsecond=0)) + ": Waiting for next call...")
+        else:
+            schedule.every().day.at(checkInTime).do(post_checkin, msgCheckIn, channel_id)
+            schedule.every().day.at(checkOutTime).do(post_checkout, msgCheckOut, channel_id)
 
-        schedule.run_pending()
-        print(str(datetime.now().replace(microsecond=0)) + ": Waiting for next call...")
-        time.sleep(60)
+            schedule.run_pending()
+            print(str(datetime.now().replace(microsecond=0)) + ": Waiting for next call...")
+            time.sleep(60)
