@@ -13,7 +13,6 @@ checkInTime = ""                        # Time that send check-in message (E.g. 
 checkOutTime = ""                       # Time that send check-out message (E.g. 24:59)
 msgCheckIn = "Check-in"
 msgCheckOut = "Check-out"
-currentDate = datetime.now().date()
 endDate = datetime(0000, 00, 00).date() # Date to stop the thread. Format: (yyyy,mm,dd)
 ```
 
