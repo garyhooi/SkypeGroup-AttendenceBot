@@ -32,6 +32,9 @@ def post_checkout(msg, channel_id):
     print(str(datetime.now().replace(microsecond=0)) + ": Check-out sent successful!")
 
 # Processing
+schedule.every().day.at(checkInTime).do(post_checkin, msgCheckIn, channel_id)
+schedule.every().day.at(checkOutTime).do(post_checkout, msgCheckOut, channel_id)
+
 while True:
     print(str(datetime.now().replace(microsecond=0)) + ": Checking your scheduled time...")
 
@@ -43,9 +46,6 @@ while True:
             print(str(datetime.now().replace(microsecond=0)) + ": Program skipped... Today is weekend.")
             print(str(datetime.now().replace(microsecond=0)) + ": Waiting for next call...")
         else:
-            schedule.every().day.at(checkInTime).do(post_checkin, msgCheckIn, channel_id)
-            schedule.every().day.at(checkOutTime).do(post_checkout, msgCheckOut, channel_id)
-
             schedule.run_pending()
             print(str(datetime.now().replace(microsecond=0)) + ": Waiting for next call...")
             time.sleep(60)
