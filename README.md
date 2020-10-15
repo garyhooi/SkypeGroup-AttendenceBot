@@ -11,8 +11,8 @@ credentialPwd = ""                      # Skype Password (For safety, use app pa
 channel_id = ""                         # Skype Group ID Example: '19:f642fc6241b047ca870e6a0790b76126@thread.skype'
 checkInTime = ""                        # Time that send check-in message (E.g. 00:00)
 checkOutTime = ""                       # Time that send check-out message (E.g. 24:59)
-msgCheckIn = "Check-in"
-msgCheckOut = "Check-out"
+msgCheckIn = "Check-in"                 # Message to send while checking in
+msgCheckOut = "Check-out"               # Message to send while checking out
 endDate = datetime(0000, 00, 00).date() # Date to stop the thread. Format: (yyyy,mm,dd)
 ```
 
